@@ -46,61 +46,23 @@ contract NftCreate is NFTokenMetadata, Ownable {
     uint length
   );
   function getAddress(uint256 _tokenId) public 
-  //view returns (address)
+ 
   {
     emit eventaddress(infomap[_tokenId].ownerAddress);
-   // return infomap[_tokenId].ownerAddress;
+   
 
   }
   function getLength() public 
-  //view returns (uint)
+  
   {
     emit  eventlength(totalNfts);
-   // return totalNfts;
+   
   }
   function getDetails(uint256 _tokenId) public 
-  //view returns (string memory, address)
+  
   {
      emit eventdetails(infomap[_tokenId].NFTname,infomap[_tokenId].ownerAddress,infomap[_tokenId].blockNumber,infomap[_tokenId].blockTimeStamp,infomap[_tokenId].ipfsUrl);
-  //  return (infomap[_tokenId].NFTname,infomap[_tokenId].ownerAddress);
+ 
   }
   
 }
-
-//pragma solidity >=0.4.22 <0.9.0;
-/*
-import "./ownable.sol";
-import "./NFTcreate.sol";
-/// @title A title that should describe the contract/interface
-/// @author The name of the author
-/// @notice Explain to an end user what this does
-/// @dev Explain to a developer any extra details
-
-contract NftDetails is Ownable
-//, NFTcreate
-{
-//NFTdetail[] data ;
-//NFTcreate nftcreate ;
-mapping (address => NFTdetail) store;
-struct NFTdetail{
-    string NFTname;
-    string ownerName;
-    uint timeStamp;
-    uint blockNum;
-    address ownerAddress;
-}
-/*
-constructor (address _contractAddress){
-    nftcreate = NFTcreate(_contractAddress);
-}
-
-function addDetails (string memory _NFTname, string memory _ownerName, uint _timeStamp, uint _blockNum, address _ownerAddress,address NFTcode) internal onlyOwner {
- store[NFTcode] = NFTdetail(_NFTname,_ownerName,_timeStamp, _blockNum, _ownerAddress); 
-}
-
-function getDetails (address NFTcode) public view returns (string memory , string memory ,uint ,uint, address) {
-    return (store[NFTcode].NFTname,store[NFTcode].ownerName,store[NFTcode].timeStamp, store[NFTcode].blockNum, store[NFTcode].ownerAddress);
-}
-
-}
-*/
